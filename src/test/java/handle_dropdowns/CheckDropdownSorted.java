@@ -15,55 +15,48 @@ public class CheckDropdownSorted {
 
 	public static void main(String[] args) {
 
-		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		
+
 		driver.get("https://www.twoplugs.com/");
 		driver.manage().window().maximize();
-		
-		//live posting
+
+		// live posting
 		driver.findElement(By.xpath("//*[text()='Live Posting']")).click();
-		
-		
+
 		WebElement dropdownList = driver.findElement(By.name("category_id"));
-		
+
 		Select select = new Select(dropdownList);
-		
+
 		List<WebElement> options = select.getOptions();
-		
+
 		ArrayList orgList = new ArrayList();
-		
+
 		ArrayList tempList = new ArrayList();
-		
-		for(WebElement option: options)
-		{
+
+		for (WebElement option : options) {
 			orgList.add(option.getText());
 			tempList.add(option.getText());
-			
+
 		}
-		
-		System.out.println("original list: "+orgList);
-		System.out.println("temp list: "+tempList);
-		
-		
+
+		System.out.println("original list: " + orgList);
+		System.out.println("temp list: " + tempList);
+
 		Collections.sort(tempList);
-		
-		//after sorting
-		System.out.println("original list: "+orgList);
-		System.out.println("temp list after sorting: "+tempList);
-		
-		if(orgList.equals(tempList))
-		{
+
+		// after sorting
+		System.out.println("original list: " + orgList);
+		System.out.println("temp list after sorting: " + tempList);
+
+		if (orgList.equals(tempList)) {
 			System.out.println("dropdown sorted");
-		}
-		else
-		{
+		} else {
 			System.out.println("dropdown unsorted");
 		}
-		
+
 		driver.close();
-		
+
 	}
 
 }

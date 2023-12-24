@@ -6,12 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class StatusOfWebElements {
-
-	
 	// how to check the WebElement is displayed, selected, and enabled?
 	public static void main(String[] args) throws InterruptedException {
 
-		
 		WebDriver driver = new ChromeDriver();
 		
 		driver.get("https://www.facebook.com/r.php?locale=en_GB&display=page");

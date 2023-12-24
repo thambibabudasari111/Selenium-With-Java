@@ -10,41 +10,21 @@ public class HandleDropdownsUsingSelectClass {
 
 	public static void main(String[] args) {
 
-
 		WebDriver driver = new ChromeDriver();
-		
+
 		driver.get("https://www.globalsqa.com/demo-site/select-dropdown-menu/");
 		driver.manage().window().maximize();
-		
+
 		WebElement countryDropdown = driver.findElement(By.xpath("//*[@class='resp-tabs-container']//select"));
-		
-		
+
 		Select select = new Select(countryDropdown);
-		
-		//select.selectByVisibleText("Israel");
-		//select.selectByIndex(10);
+
+		// select.selectByVisibleText("Israel");
+		// select.selectByIndex(10);
 		select.selectByValue("COL");
-		
+
 		driver.close();
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 	}
 
 }
